@@ -1,0 +1,38 @@
+[
+  {
+    "nome": "Relógio Curren",
+    "preco": 120.00,
+    "imagem": "imagens/relogio.curren.jpg",
+    "categoria": "bolsas"
+  },
+  {
+    "nome": "Fone Bluetooth",
+    "preco": 80.00,
+    "imagem": "imagens/fone1.jpg",
+    "categoria": "eletronicos"
+  },
+  {
+    "nome": "Carrinho de Brinquedo",
+    "preco": 45.00,
+    "imagem": "imagens/brinquedo1.jpg",
+    "categoria": "brinquedos"
+  },
+  {
+    "nome": "Kit Sensual",
+    "preco": 99.90,
+    "imagem": "imagens/hot1.jpg",
+    "categoria": "hot"
+  },
+  {
+    "nome": "Cesta de Café da Manhã",
+    "preco": 150.00,
+    "imagem": "imagens/cesta1.jpg",
+    "categoria": "cestas"
+  },
+  {
+    "nome": "Colar Prata",
+    "preco": 70.00,
+    "imagem": "imagens/acessorio1.jpg",
+    "categoria": "acessorios"
+  }
+]
