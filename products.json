@@ -2,13 +2,13 @@
   {
     "nome": "Bolsa c/ Corrente Dourada",
     "preco": 55.90,
-    "imagem": "bolsacorrentedourada.jpg",
+    "imagem": "imagens/bolsacorrentedourada.jpg",
     "categoria": "bolsas"
   },
   {
     "nome": "Fone Bluetooth",
     "preco": 80.00,
-    "imagem": "relogio.curren.jpg.jpeg",
+    "imagem": "imagens/relogio.curren.jpg.jpeg",
     "categoria": "eletronicos"
   },
   {
@@ -36,8 +36,3 @@
     "categoria": "acessorios"
   }
 ]
-
-
-
-
-
