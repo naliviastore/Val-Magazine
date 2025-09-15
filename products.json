@@ -8,7 +8,7 @@
   {
     "nome": "Fone Bluetooth",
     "preco": 80.00,
-    "imagem": "imagens/fone1.jpg",
+    "imagem": "relogio.curren.jpg.jpeg",
     "categoria": "eletronicos"
   },
   {
@@ -36,5 +36,6 @@
     "categoria": "acessorios"
   }
 ]
+
 
 
