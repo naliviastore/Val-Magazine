@@ -2,7 +2,7 @@
   {
     "nome": "Bolsa c/ Corrente Dourada",
     "preco": 55.90,
-    "imagem": "imagens/bolsacorrentedourada.jpg",
+    "imagem": "bolsacorrentedourada.jpg",
     "categoria": "bolsas"
   },
   {
@@ -36,3 +36,4 @@
     "categoria": "acessorios"
   }
 ]
+
