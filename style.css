@@ -5,6 +5,7 @@ body {
   color: #fff;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -14,25 +15,21 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-header .logo {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 header .logo img {
   height: 40px;
-  max-width: 100%;
   object-fit: contain;
 }
 
 header input {
   flex: 1;
-  margin: 0 20px;
+  margin: 10px 20px;
   padding: 8px;
   border-radius: 6px;
   border: none;
+  min-width: 180px;
 }
 
 header .icons {
@@ -47,33 +44,42 @@ header .icons img {
   cursor: pointer;
 }
 
+/* NAV */
 nav {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  overflow-x: auto;
   background: #222;
   padding: 10px;
+  scrollbar-width: none;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
 }
 
 nav button {
-  margin: 5px;
+  flex-shrink: 0;
   padding: 8px 12px;
   background: #444;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 nav button:hover {
   background: #666;
 }
 
+/* GRID DE PRODUTOS */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 .product-card {
@@ -114,7 +120,7 @@ nav button:hover {
   background: #444;
 }
 
-/* Modal carrinho */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -142,9 +148,43 @@ nav button:hover {
   cursor: pointer;
 }
 
-/* Ajuste da logo em telas menores */
-@media (max-width: 600px) {
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  header input {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  header .icons {
+    justify-content: flex-end;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
   header .logo img {
     height: 30px;
+  }
+
+  nav {
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .product-card {
+    padding: 10px;
   }
 }
