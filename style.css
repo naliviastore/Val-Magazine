@@ -89,15 +89,24 @@ nav button:hover {
   padding: 15px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .product-card img {
   max-width: 100%;
   border-radius: 8px;
+  height: 180px;         /* tamanho fixo da imagem */
+  object-fit: cover;     /* mantém proporção e corta se necessário */
 }
 
 .product-card h3 {
   margin: 10px 0;
+  font-size: 16px;
+  min-height: 40px; /* força título ter altura mínima */
 }
 
 .product-card p {
@@ -107,7 +116,7 @@ nav button:hover {
 }
 
 .product-card button {
-  margin-top: 10px;
+  margin-top: auto; /* fica sempre no fim do card */
   padding: 8px 12px;
   border: none;
   background: #111;
@@ -186,5 +195,9 @@ nav button:hover {
 
   .product-card {
     padding: 10px;
+  }
+
+  .product-card img {
+    height: 150px; /* ajusta imagens no celular */
   }
 }
