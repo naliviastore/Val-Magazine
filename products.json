@@ -12,9 +12,9 @@
     "categoria": "eletronicos"
   },
   {
-    "nome": "Carrinho de Brinquedo",
-    "preco": 45.00,
-    "imagem": "imagens/brinquedo1.jpg",
+    "nome": "Carrinho Police Security Nova Toys",
+    "preco": 38.50,
+    "imagem": "carrinhopolicia.jpeg",
     "categoria": "brinquedos"
   },
   {
@@ -35,6 +35,10 @@
     "imagem": "relogio.curren.jpg.jpeg",
     "categoria": "acessorios"
   }
-]
+ {
+    "nome": "Maleta Dentista Dentinho Feliz",
+    "preco": 28.00,
+    "imagem": "relogio.curren.jpg.jpeg",
+    "categoria": "Brinquedos"
 
 
