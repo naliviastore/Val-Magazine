@@ -10,6 +10,7 @@ async function carregarProdutos() {
     configurarCategorias(produtos);
   } catch (e) {
     console.error("Erro ao carregar produtos:", e);
+    document.getElementById('product-list').innerHTML = "<p>Erro ao carregar produtos.</p>";
   }
 }
 
@@ -18,7 +19,7 @@ function exibirProdutos(produtos) {
   const lista = document.getElementById('product-list');
   lista.innerHTML = '';
 
-  if (produtos.length === 0) {
+  if (!produtos || produtos.length === 0) {
     lista.innerHTML = '<p>Nenhum produto encontrado.</p>';
     return;
   }
@@ -97,7 +98,7 @@ function configurarBusca(produtos) {
   });
 }
 
-// Filtro por categoria
+// Filtro por categoria (corrigido para ignorar maiúsculas/minúsculas)
 function configurarCategorias(produtos) {
   document.querySelectorAll('.category').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -105,7 +106,9 @@ function configurarCategorias(produtos) {
       if (categoria === 'all') {
         exibirProdutos(produtos);
       } else {
-        const filtrados = produtos.filter(p => p.categoria === categoria);
+        const filtrados = produtos.filter(
+          p => p.categoria.toLowerCase() === categoria.toLowerCase()
+        );
         exibirProdutos(filtrados);
       }
     });
