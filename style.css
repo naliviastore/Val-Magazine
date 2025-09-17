@@ -1,87 +1,80 @@
-body {
-  font-family: Arial, sans-serif;
+/* ================== RESET ================== */
+* {
   margin: 0;
-  background: linear-gradient(135deg, #000000, #333333, #777777);
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #111, #333);
   color: #fff;
 }
 
-/* HEADER */
+/* ================== HEADER ================== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  flex-wrap: wrap;
+  padding: 15px;
+  background: #000;
 }
 
-header .logo img {
-  height: 40px;
-  object-fit: contain;
+header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
 }
 
 header input {
-  flex: 1;
-  margin: 10px 20px;
-  padding: 8px;
-  border-radius: 6px;
+  width: 60%;
+  max-width: 500px;
+  padding: 8px 12px;
   border: none;
-  min-width: 180px;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
-header .icons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-header .icons img {
-  width: 25px;
-  filter: invert(1);
+header .cart {
+  color: white;
+  font-size: 18px;
   cursor: pointer;
 }
 
-/* NAV */
+/* ================== CATEGORIAS ================== */
 nav {
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;        /* quebra em várias linhas */
+  justify-content: center; /* centraliza no PC */
   gap: 8px;
-  overflow-x: auto;
   background: #222;
   padding: 10px;
-  scrollbar-width: none;
-}
-
-nav::-webkit-scrollbar {
-  display: none;
 }
 
 nav button {
-  flex-shrink: 0;
-  padding: 8px 12px;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
   background: #444;
   color: white;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
-  white-space: nowrap;
+  transition: 0.3s;
 }
 
 nav button:hover {
   background: #666;
 }
 
-/* GRID DE PRODUTOS */
-.grid {
+/* ================== GRID PRODUTOS ================== */
+#produtos {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   padding: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
+/* ================== CARD PRODUTO ================== */
 .product-card {
   background: #fff;
   color: #000;
@@ -93,111 +86,47 @@ nav button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: 100%; /* ocupa altura máxima do grid */
 }
 
 .product-card img {
   max-width: 100%;
   border-radius: 8px;
-  height: 180px;         /* tamanho fixo da imagem */
-  object-fit: cover;     /* mantém proporção e corta se necessário */
+  height: 180px;         /* altura fixa */
+  object-fit: cover;     /* mantém proporção cortando */
 }
 
 .product-card h3 {
-  margin: 10px 0;
   font-size: 16px;
-  min-height: 40px; /* força título ter altura mínima */
+  margin: 10px 0;
 }
 
 .product-card p {
-  margin: 5px 0;
   font-weight: bold;
-  color: #2a9d8f;
+  color: seagreen;
+  margin: 8px 0;
 }
 
 .product-card button {
-  margin-top: auto; /* fica sempre no fim do card */
-  padding: 8px 12px;
+  margin-top: auto;  /* joga botão para baixo */
+  padding: 10px;
   border: none;
-  background: #111;
+  border-radius: 6px;
+  background: #000;
   color: white;
-  border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .product-card button:hover {
   background: #444;
 }
 
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-  background: #fff;
-  color: #000;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-}
-
-#close-cart {
-  float: right;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  header input {
-    margin: 10px 0;
-    width: 100%;
-  }
-
-  header .icons {
-    justify-content: flex-end;
-  }
-
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  header .logo img {
-    height: 30px;
-  }
-
-  nav {
-    gap: 5px;
-    padding: 8px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .product-card {
-    padding: 10px;
-  }
-
-  .product-card img {
-    height: 150px; /* ajusta imagens no celular */
-  }
+/* ================== FOOTER ================== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #000;
+  color: #aaa;
+  font-size: 14px;
 }
