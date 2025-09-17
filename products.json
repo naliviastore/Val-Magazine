@@ -34,13 +34,11 @@
     "preco": 70.00,
     "imagem": "relogio.curren.jpg.jpeg",
     "categoria": "acessorios"
-  }
- {
+  },
+  {
     "nome": "Maleta Dentista Dentinho Feliz",
     "preco": 28.00,
     "imagem": "maletadentista.jpeg",
-    "categoria": "Brinquedos"
-   ]
-
-
-
+    "categoria": "brinquedos"
+  }
+]
