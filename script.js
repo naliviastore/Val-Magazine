@@ -3,7 +3,7 @@ let carrinho = [];
 // Carregar produtos
 async function carregarProdutos() {
   try {
-    const response = await fetch('products.json');
+    const response = await fetch('produtos.json'); // nome corrigido
     const produtos = await response.json();
     exibirProdutos(produtos);
     configurarBusca(produtos);
@@ -98,7 +98,7 @@ function configurarBusca(produtos) {
   });
 }
 
-// Filtro por categoria (corrigido para ignorar maiúsculas/minúsculas)
+// Filtro por categoria
 function configurarCategorias(produtos) {
   document.querySelectorAll('.category').forEach(btn => {
     btn.addEventListener('click', () => {
