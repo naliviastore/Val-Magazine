@@ -1,4 +1,4 @@
-/* ================== RESET ================== */
+/* ======== RESET ======== */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body {
   color: #fff;
 }
 
-/* ================== HEADER ================== */
+/* ======== HEADER ======== */
 header {
   display: flex;
   justify-content: space-between;
@@ -38,22 +38,35 @@ header input {
 header .icons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 header .icons img {
   width: 24px;
-  filter: invert(1);
+  height: 24px;
 }
 
-/* ================== CATEGORIAS ================== */
+header .icons button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ======== CATEGORIAS ======== */
 nav {
-  display: flex;
-  flex-wrap: wrap;        /* quebra em várias linhas */
-  justify-content: center; /* centraliza no PC */
-  gap: 8px;
   background: #222;
   padding: 10px;
+  overflow-x: auto;   /* scroll lateral em telas pequenas */
+}
+
+.categories {
+  display: flex;
+  justify-content: center; /* centraliza no PC */
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: max-content; /* evita quebra feia no mobile */
 }
 
 nav button {
@@ -65,13 +78,14 @@ nav button {
   color: white;
   cursor: pointer;
   transition: 0.3s;
+  white-space: nowrap; /* mantém em linha no celular */
 }
 
 nav button:hover {
   background: #666;
 }
 
-/* ================== GRID PRODUTOS ================== */
+/* ======== GRID PRODUTOS ======== */
 #product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -79,7 +93,7 @@ nav button:hover {
   padding: 20px;
 }
 
-/* ================== CARD PRODUTO ================== */
+/* ======== CARD PRODUTO ======== */
 .product-card {
   background: #fff;
   color: #000;
@@ -91,7 +105,6 @@ nav button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
 }
 
 .product-card img {
@@ -127,44 +140,39 @@ nav button:hover {
   background: #444;
 }
 
-/* ================== FOOTER ================== */
+/* ======== MODAL CARRINHO ======== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+#close-cart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* ======== FOOTER ======== */
 footer {
   text-align: center;
   padding: 15px;
   background: #000;
   color: #aaa;
   font-size: 14px;
-}
-
-/* ================== MOBILE (ESTILO SHEIN) ================== */
-@media (max-width: 768px) {
-  #product-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas fixas */
-    gap: 12px;
-    padding: 10px;
-  }
-
-  .product-card {
-    padding: 10px;
-    border-radius: 6px;
-  }
-
-  .product-card img {
-    height: 150px;
-    object-fit: cover;
-  }
-
-  .product-card h3 {
-    font-size: 14px;
-    margin: 6px 0;
-  }
-
-  .product-card p {
-    font-size: 13px;
-  }
-
-  .product-card button {
-    font-size: 13px;
-    padding: 8px;
-  }
 }
