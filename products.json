@@ -24,8 +24,8 @@
     "categoria": "hot"
   },
   {
-    "nome": "Cesta de Café da Manhã",
-    "preco": 150.00,
+    "nome": "Kit Dia dos Pais",
+    "preco": 116.90,
     "imagem": "imagens/cesta1.jpg",
     "categoria": "cestas"
   },
@@ -40,6 +40,7 @@
     "preco": 28.00,
     "imagem": "maletadentista.jpeg",
     "categoria": "Brinquedos"
+
 
 
 
