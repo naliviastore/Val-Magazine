@@ -2,17 +2,27 @@ let carrinho = [];
 
 // Carregar produtos
 async function carregarProdutos() {
-  const response = await fetch('products.json');
-  const produtos = await response.json();
-  exibirProdutos(produtos);
-  configurarBusca(produtos);
-  configurarCategorias(produtos);
+  try {
+    const response = await fetch('products.json');
+    const produtos = await response.json();
+    exibirProdutos(produtos);
+    configurarBusca(produtos);
+    configurarCategorias(produtos);
+  } catch (e) {
+    console.error("Erro ao carregar produtos:", e);
+  }
 }
 
 // Exibir produtos
 function exibirProdutos(produtos) {
   const lista = document.getElementById('product-list');
   lista.innerHTML = '';
+
+  if (produtos.length === 0) {
+    lista.innerHTML = '<p>Nenhum produto encontrado.</p>';
+    return;
+  }
+
   produtos.forEach(produto => {
     const card = document.createElement('div');
     card.className = 'product-card';
@@ -36,7 +46,7 @@ function adicionarAoCarrinho(nome, preco) {
 const modal = document.getElementById('cart-modal');
 document.getElementById('cart-btn').onclick = () => {
   atualizarCarrinho();
-  modal.style.display = 'block';
+  modal.style.display = 'flex';
 };
 document.getElementById('close-cart').onclick = () => {
   modal.style.display = 'none';
@@ -50,24 +60,30 @@ function atualizarCarrinho() {
   const container = document.getElementById('cart-items');
   container.innerHTML = '';
   let total = 0;
+
   carrinho.forEach(item => {
     container.innerHTML += `<p>${item.nome} - R$ ${item.preco.toFixed(2)}</p>`;
     total += item.preco;
   });
+
   document.getElementById('cart-total').textContent = total.toFixed(2);
 }
 
 // Finalizar no WhatsApp
 document.getElementById('checkout-btn').onclick = () => {
   if (carrinho.length === 0) return alert("Seu carrinho está vazio!");
+
   let mensagem = "Olá, gostaria de comprar:\n";
   let total = 0;
+
   carrinho.forEach(item => {
     mensagem += `- ${item.nome} (R$ ${item.preco.toFixed(2)})\n`;
     total += item.preco;
   });
+
   mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
-  const numero = "5577981543503"; // DDD + número
+
+  const numero = "5577981543503"; // seu número WhatsApp
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, "_blank");
 };
